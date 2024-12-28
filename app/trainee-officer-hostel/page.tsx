@@ -2,7 +2,7 @@
 
 import { Image } from "antd";
 
-export default function HomePage() {
+export default function CertificatePage() {
   return (
     <div className="w-full">
       <section className="w-full h-screen flex items-center justify-center">
@@ -23,8 +23,8 @@ export default function HomePage() {
           />
           <div className="border-l pl-2 text-white">
             <span className="text-2xl">IIT ROORKEE</span>
-            <p className="text-4xl">Continuing</p>
-            <p className="text-4xl">Education Center</p>
+            <p className="text-4xl">Trainee</p>
+            <p className="text-4xl">Officer's Hostel</p>
           </div>
         </div>
       </section>
