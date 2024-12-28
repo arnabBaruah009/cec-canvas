@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "CEC",
@@ -14,14 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="overflow-hidden">
-        <div className="flex h-screen">
-          <div className="flex-1 min-w-0 relative">
-            <div className="absolute inset-0">
-              <Providers>{children}</Providers>
-            </div>
+      <body className="">
+        <Providers>
+          <div className="bg-gray-300">
+            <Navbar />
+            {children}
+            <Footer />
           </div>
-        </div>
+        </Providers>
       </body>
     </html>
   );
