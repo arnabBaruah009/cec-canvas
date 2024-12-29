@@ -1,10 +1,59 @@
 "use client";
 
-import { Image } from "antd";
+import { Image, Table } from "antd";
+
+interface DataItem {
+  title: string;
+  date: string;
+  download_link: string;
+}
+
+const data: DataItem[] = Array.from({ length: 10 }, (_, index) => ({
+  title: "Request for course invoice generation for open participation course",
+  date: "20/11/2024",
+  download_link: "#",
+}));
 
 export default function FormsPage() {
+  const columns = [
+    {
+      title: "Sl. No.",
+      dataIndex: "index",
+      key: "index",
+      align: "center" as "center",
+      render: (_: any, __: DataItem, index: number) => <span>{index + 1}</span>,
+    },
+    {
+      title: "Description",
+      dataIndex: "title",
+      key: "title",
+      render: (text: string) => <span>{text}</span>,
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+      render: (text: string) => <span>{text}</span>,
+    },
+    {
+      title: "Download",
+      dataIndex: "download_link",
+      key: "download_link",
+      render: (link: string) => (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#FFAE0E] hover:text-[#FFAE0E] hover:underline"
+        >
+          Download
+        </a>
+      ),
+    },
+  ];
+
   return (
-    <div className="w-full">
+    <div className="w-full font-inter">
       <section className="w-full h-screen flex items-center justify-center">
         {/* Background Image */}
         <div
@@ -26,6 +75,20 @@ export default function FormsPage() {
             <p className="text-4xl">CEC</p>
             <p className="text-4xl">Forms</p>
           </div>
+        </div>
+      </section>
+      <section className="w-full py-6">
+        <div className="w-full p-4 bg-white">
+          <h1 className="text-4xl font-semibold text-center mb-2">CEC Forms</h1>
+          <p className="text-xl font-normal text-gray-500 text-center mb-12">
+            For the courses approved on March 08, 2022 onwards
+          </p>
+          <Table
+            dataSource={data.map((item, index) => ({ ...item, key: index }))}
+            columns={columns}
+            pagination={false}
+            bordered
+          />
         </div>
       </section>
     </div>
