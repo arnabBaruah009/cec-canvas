@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Providers>
-          <div className="bg-gray-300">
+          <div className="">
             <Navbar />
             {children}
             <Footer />

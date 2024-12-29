@@ -1,87 +1,109 @@
 "use client";
 
-// components/TopNavbar.tsx
-import React from "react";
-import { Menu, Dropdown } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import React, { useEffect, useState } from "react";
+import { Image } from "antd";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Navbar: React.FC = () => {
-  const handleFilter = () => {};
-  // Dropdown menu for "More"
-  const moreMenu = {
-    items: [
-      { key: "All", label: "All" },
-      {
-        key: "gender",
-        label: "Gender",
-        children: [
-          {
-            key: "Male",
-            label: "Male",
-          },
-          {
-            key: "Female",
-            label: "Female",
-          },
-          {
-            key: "Other",
-            label: "Other",
-          },
-        ],
-      },
-    ],
-    onClick: handleFilter,
-  };
+  const pathname = usePathname();
+  const [activePage, setActivePage] = useState<string>("");
+
+  useEffect(() => {
+    // Set the active page based on the current route
+    const currentPage = pathname === "/" ? "home" : pathname.slice(1);
+    setActivePage(currentPage);
+    localStorage.setItem("activePage", currentPage);
+  }, [pathname]);
+
+  useEffect(() => {
+    // Retrieve the active page from local storage on mount
+    const storedPage = localStorage.getItem("activePage");
+    if (storedPage) {
+      setActivePage(storedPage);
+    }
+  }, []);
+
+  const isActive = (page: string) => activePage === page;
 
   return (
-    <nav className="text-white py-3 px-6 w-full fixed top-0 left-0 z-10">
+    <nav className="text-white py-3 px-6 w-full absolute top-0 left-0 z-20 font-inter">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          {/* <img
-            src="/logo.png" // Replace with your logo path
-            alt="Continuing Education Center Logo"
-            className="h-8 w-8"
-          /> */}
-          <span className="text-lg font-semibold">
-            Continuing Education Center
-          </span>
+        <div className="relative flex items-center space-x-2">
+          <Image
+            preview={false}
+            src="/IITR_logo.png"
+            width="38px"
+            height="38px"
+            className=""
+          />
+          <div className="text-white">
+            <p className="text-sm tracking-wider">Continuing</p>
+            <p className="text-sm tracking-wider">Education Center</p>
+          </div>
         </div>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="hover:text-gray-300">
+          <Link
+            href="/"
+            className={`hover:text-gray-300 ${
+              isActive("home") ? "text-[#ffa500]" : "text-white"
+            }`}
+          >
             Home
           </Link>
-          <Link href="/courses" className="hover:text-gray-300">
-            Courses
+          <Link
+            href="/sponsors"
+            className={`hover:text-gray-300 ${
+              isActive("sponsors") ? "text-[#ffa500]" : "text-white"
+            }`}
+          >
+            Sponsors
           </Link>
           <Link
-            href="/verify-certificate"
-            className="text-[#ffa500] hover:text-[#ffb733]"
+            href="/certificate"
+            className={`hover:text-gray-300 ${
+              isActive("certificate") ? "text-[#ffa500]" : "text-white"
+            }`}
           >
             Verify Certificate
           </Link>
-          <Link href="/qip" className="hover:text-gray-300">
-            QIP
+          <Link
+            href="/forms"
+            className={`hover:text-gray-300 ${
+              isActive("forms") ? "text-[#ffa500]" : "text-white"
+            }`}
+          >
+            Forms
           </Link>
-          <Link href="/toh" className="hover:text-gray-300">
+          <Link
+            href="/trainee-officer-hostel"
+            className={`hover:text-gray-300 ${
+              isActive("trainee-officer-hostel")
+                ? "text-[#ffa500]"
+                : "text-white"
+            }`}
+          >
             TOH
           </Link>
-          <Link href="/people" className="hover:text-gray-300">
+          <Link
+            href="/staff"
+            className={`hover:text-gray-300 ${
+              isActive("staff") ? "text-[#ffa500]" : "text-white"
+            }`}
+          >
             People
           </Link>
-
-          {/* Dropdown for "More" */}
-          <Dropdown menu={moreMenu} trigger={["click"]}>
-            <a
-              onClick={(e) => e.preventDefault()}
-              className="hover:text-gray-300 flex items-center"
-            >
-              More <DownOutlined className="ml-1" />
-            </a>
-          </Dropdown>
+          <Link
+            href="/gallery"
+            className={`hover:text-gray-300 ${
+              isActive("gallery") ? "text-[#ffa500]" : "text-white"
+            }`}
+          >
+            Gallery
+          </Link>
         </div>
       </div>
     </nav>
