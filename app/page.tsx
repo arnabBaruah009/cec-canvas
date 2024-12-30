@@ -49,6 +49,7 @@ type NewsItem = {
 };
 
 const courses: Course[] = [
+  // Emerging Technologies
   {
     id: 1,
     name: "Certificate Program in UI/UX",
@@ -60,6 +61,35 @@ const courses: Course[] = [
   },
   {
     id: 2,
+    name: "Introduction to Artificial Intelligence",
+    duration: "6 Months",
+    mode: "Online",
+    students: "8000+",
+    partner: "AI Lab",
+    category: "Emerging Technologies",
+  },
+  // Hardware & IT
+  {
+    id: 3,
+    name: "Diploma in Computer Hardware",
+    duration: "5 Months",
+    mode: "Offline",
+    students: "3000+",
+    partner: "Tech Institute",
+    category: "Hardware & IT",
+  },
+  {
+    id: 4,
+    name: "Networking Essentials",
+    duration: "3 Months",
+    mode: "Hybrid",
+    students: "4500+",
+    partner: "NetPro Academy",
+    category: "Hardware & IT",
+  },
+  // Management
+  {
+    id: 5,
     name: "Certificate Program in Management",
     duration: "4 Months",
     mode: "Hybrid",
@@ -67,7 +97,53 @@ const courses: Course[] = [
     partner: "CLOUDXLAB",
     category: "Management",
   },
-  // Add more courses as needed
+  {
+    id: 6,
+    name: "Leadership and Team Building",
+    duration: "2 Months",
+    mode: "Online",
+    students: "1500+",
+    partner: "Business Academy",
+    category: "Management",
+  },
+  // Project Management
+  {
+    id: 7,
+    name: "PMP Certification Training",
+    duration: "3 Months",
+    mode: "Online",
+    students: "4000+",
+    partner: "PM Institute",
+    category: "Project Management",
+  },
+  {
+    id: 8,
+    name: "Agile and Scrum Fundamentals",
+    duration: "2 Months",
+    mode: "Online",
+    students: "3500+",
+    partner: "Scrum Mastery",
+    category: "Project Management",
+  },
+  // Miscellaneous
+  {
+    id: 9,
+    name: "Creative Writing Workshop",
+    duration: "1 Month",
+    mode: "Offline",
+    students: "2000+",
+    partner: "Writers' Guild",
+    category: "Miscellaneous",
+  },
+  {
+    id: 10,
+    name: "Photography Essentials",
+    duration: "2 Months",
+    mode: "Hybrid",
+    students: "2500+",
+    partner: "Visual Arts Academy",
+    category: "Miscellaneous",
+  },
 ];
 
 const testimonials = [
