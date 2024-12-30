@@ -34,7 +34,7 @@ export default function CertificatePage() {
         </div>
       </section>
       <section className="bg-[#FFFAF1] py-6">
-        <div className="p-6 max-w-md mx-auto">
+        <div className="p-6 max-w-md mx-auto container">
           <h2 className="text-4xl font-medium mb-4 text-left tracking-wide">
             Download Certificate
           </h2>
