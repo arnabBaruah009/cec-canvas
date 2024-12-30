@@ -40,12 +40,13 @@ export default function CertificatePage() {
       <section className="w-full h-screen flex items-center justify-center">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-[url('/background.jpg')] bg-cover bg-center brightness-50"
+          className="absolute inset-0 bg-[url('/TOH_background.jpeg')] bg-cover bg-center brightness-[0.7]"
           aria-hidden="true"
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
 
         {/* Content */}
-        <div className="relative flex items-center">
+        <div className="relative flex items-center z-20">
           <Image
             preview={false}
             src="/IITR_logo.png"

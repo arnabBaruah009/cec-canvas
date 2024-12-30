@@ -156,17 +156,19 @@ export default function HomePage() {
     );
   }, [activeCategory]);
 
+
   return (
     <div className="w-full font-inter">
       <section className="w-full h-screen flex items-center justify-center border-2">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-[url('/IITR_building.jpeg')] bg-cover bg-center brightness-50"
+          className="absolute inset-0 bg-[url('/home_background.png')] bg-cover bg-center brightness-[0.7]"
           aria-hidden="true"
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
 
         {/* Content */}
-        <div className="relative flex items-center">
+        <div className="relative flex items-center z-20">
           <Image
             preview={false}
             src="/IITR_logo.png"
