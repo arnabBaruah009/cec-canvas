@@ -1,6 +1,6 @@
 "use client";
 
-import { Image, Card } from "antd";
+import { Image } from "antd";
 
 // Define the type for the card data
 interface CardData {
@@ -76,6 +76,7 @@ export default function StaffPage() {
             width="164px"
             height="164px"
             className=""
+            alt="IITR Logo"
           />
           <div className="border-l pl-2 text-white">
             <span className="text-2xl">IIT ROORKEE</span>

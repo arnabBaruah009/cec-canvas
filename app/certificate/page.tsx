@@ -5,7 +5,7 @@ import { Form, Input, Button, Image, ConfigProvider } from "antd";
 export default function CertificatePage() {
   const [form] = Form.useForm();
 
-  const onFinish = (values: any) => {
+  const onFinish = (values: unknown) => {
     console.log("Form Values:", values);
   };
   return (
@@ -22,6 +22,7 @@ export default function CertificatePage() {
         <div className="relative flex items-center z-20">
           <Image
             preview={false}
+            alt="IITR Logo"
             src="/IITR_logo.png"
             width="164px"
             height="164px"

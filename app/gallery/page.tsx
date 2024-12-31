@@ -22,6 +22,7 @@ export default function GalleryPage() {
             width="164px"
             height="164px"
             className=""
+            alt="IITR Logo"
           />
           <div className="border-l pl-2 text-white">
             <span className="text-2xl">IIT ROORKEE</span>
@@ -48,6 +49,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-video object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 MOU Signing: CEC IITR and Protecon BTG{" "}
@@ -61,6 +63,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-square object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 CEC Meet 2024{" "}
@@ -74,6 +77,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-square object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 Siemeons Authorization{" "}
@@ -87,6 +91,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-square object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 HRM & Analytics Session{" "}
@@ -100,6 +105,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-square object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 Internship Certificate{" "}
@@ -113,6 +119,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-square object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 Research Awards{" "}
@@ -126,6 +133,7 @@ export default function GalleryPage() {
                 width="100%"
                 height="100%"
                 className="aspect-video object-cover"
+                alt="Image"
               />
               <div className="absolute bottom-4 left-4 text-white font-medium text-sm md:text-xl z-30">
                 Academic Meeting : CEC IITR 2024{" "}

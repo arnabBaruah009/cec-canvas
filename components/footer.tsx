@@ -16,6 +16,7 @@ export const Footer: React.FC = () => {
               width="96px"
               height="96px"
               className=""
+              alt="IITR Logo"
             />
             <div className="border-l pl-2 text-white tracking-wide">
               <span className="text-xl">IIT ROORKEE</span>
@@ -57,6 +58,7 @@ export const Footer: React.FC = () => {
                 className="bg-white rounded-md"
                 width="20px"
                 height="20px"
+                alt="twitter"
               />
             </Link>
             <Link
@@ -72,6 +74,7 @@ export const Footer: React.FC = () => {
                 className="bg-white rounded-md"
                 width="20px"
                 height="20px"
+                alt="facebook"
               />
             </Link>
             <Link
@@ -87,6 +90,7 @@ export const Footer: React.FC = () => {
                 className="bg-white rounded-md"
                 width="20px"
                 height="20px"
+                alt="linkedin"
               />
             </Link>
           </div>

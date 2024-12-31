@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Divider, Image } from "antd";
+import { Card, Image } from "antd";
 
 interface Sponsor {
   category: string;
@@ -83,6 +83,7 @@ export default function SponsorsPage() {
             width="164px"
             height="164px"
             className=""
+            alt="IITR Logo"
           />
           <div className="border-l pl-2 text-white">
             <span className="text-2xl">IIT ROORKEE</span>
@@ -93,7 +94,9 @@ export default function SponsorsPage() {
       </section>
       <section className="py-6">
         <div className="container mx-auto p-6">
-          <h2 className="text-center text-4xl font-semibold mb-12">Our Sponsors</h2>
+          <h2 className="text-center text-4xl font-semibold mb-12">
+            Our Sponsors
+          </h2>
           {sponsors.map((sponsorCategory) => (
             <div key={sponsorCategory.category} className="mb-12">
               <h3 className="text-3xl text-center font-light mb-4">

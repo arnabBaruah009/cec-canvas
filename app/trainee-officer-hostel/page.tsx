@@ -1,7 +1,6 @@
 "use client";
 
-import { Image, Card, Typography, List } from "antd";
-const { Title, Text } = Typography;
+import { Image } from "antd";
 import {
   GraduationCap,
   School,
@@ -53,11 +52,12 @@ export default function CertificatePage() {
             width="164px"
             height="164px"
             className=""
+            alt="IITR Logo"
           />
           <div className="border-l pl-2 text-white">
             <span className="text-2xl">IIT ROORKEE</span>
             <p className="text-4xl">Trainee</p>
-            <p className="text-4xl">Officer's Hostel</p>
+            <p className="text-4xl">Officer&apos;s Hostel</p>
           </div>
         </div>
       </section>
@@ -84,11 +84,11 @@ export default function CertificatePage() {
             </div>
             <div className="ml-0 md:ml-8 mt-4 md:mt-0 text-center md:text-left">
               <p className="mb-4 text-4xl font-semibold tracking-wide">
-                Trainee Officer's Hostel (TOH)
+                Trainee Officer&apos;s Hostel (TOH)
               </p>
               <p className="mb-4 text-gray-600 text-xl text-justify">
                 The Continuing Education Centre (CEC) at IITR offers
-                well-furnished accommodations through its Trainee Officer's
+                well-furnished accommodations through its Trainee Officer&apos;s
                 Hostel, which is designed to provide a comfortable stay for
                 participants in CEC programs. The hostel features two VIP suites
                 and 34 additional rooms, all of which are air-conditioned.
@@ -138,7 +138,7 @@ export default function CertificatePage() {
           <div className="w-full grid grid-cols-2 container mx-auto">
             <div className="ml-0 md:ml-8 mt-4 md:mt-0 text-center md:text-left">
               <p className="mb-4 text-4xl font-semibold tracking-wide">
-                Facilities available at Trainee Officer's Hostel
+                Facilities available at Trainee Officer&apos;s Hostel
               </p>
               <div className="bg-[#FFFAF1] mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 max-w-max py-12 px-8 rounded-lg">
                 <div>
@@ -318,7 +318,7 @@ export default function CertificatePage() {
               <Hotel className="w-14 h-14" />
               <ul className="space-y-1 mt-4 text-base font-normal">
                 <li>Supervisor</li>
-                <li>Trainee Officer's Hostel</li>
+                <li>Trainee Officer&apos;s Hostel</li>
                 <li>Continuing Education Centre</li>
                 <li>Indian Institute of Technology Roorkee Roorkee – 247667</li>
               </ul>

@@ -37,6 +37,7 @@ export const Navbar: React.FC = () => {
             width="38px"
             height="38px"
             className=""
+            alt="IITR Logo"
           />
           <div className="text-white">
             <p className="text-sm tracking-wider">Continuing</p>

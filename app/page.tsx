@@ -1,17 +1,6 @@
 "use client";
 
-import {
-  Image,
-  Button,
-  ConfigProvider,
-  Input,
-  Tabs,
-  Card,
-  Divider,
-  Row,
-  Col,
-  Typography,
-} from "antd";
+import { Image, Button, ConfigProvider, Input, Card, Row, Col } from "antd";
 import {
   GraduationCap,
   Users,
@@ -26,8 +15,6 @@ import {
 } from "lucide-react";
 import { SearchOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-
-const { TabPane } = Tabs;
 
 interface Course {
   id: number;
@@ -232,7 +219,6 @@ export default function HomePage() {
     );
   }, [activeCategory]);
 
-
   return (
     <div className="w-full font-inter">
       <section className="w-full h-screen flex items-center justify-center border-2">
@@ -248,6 +234,7 @@ export default function HomePage() {
           <Image
             preview={false}
             src="/IITR_logo.png"
+            alt="IITR Logo"
             width="164px"
             height="164px"
             className=""
@@ -528,26 +515,31 @@ export default function HomePage() {
                 src="/sponsor-1.png"
                 height="60px"
                 className="object-cover"
+                alt="Sponsor"
               />
               <Image
                 src="/sponsor-2.png"
                 height="60px"
                 className="object-cover"
+                alt="Sponsor"
               />
               <Image
                 src="/sponsor-3.png"
                 height="60px"
                 className="object-cover"
+                alt="Sponsor"
               />
               <Image
                 src="/sponsor-1.png"
                 height="60px"
                 className="object-cover"
+                alt="Sponsor"
               />
               <Image
                 src="/sponsor-2.png"
                 height="60px"
                 className="object-cover"
+                alt="Sponsor"
               />
             </div>
           </div>
@@ -616,7 +608,7 @@ export default function HomePage() {
                 <Col key={index} span={8}>
                   <Card className="shadow-lg rounded-lg" bordered={false}>
                     <p className="text-sm font-light text-justify">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </p>
                     <div className="flex items-center mt-4 gap-x-3">
                       <Image
@@ -646,50 +638,51 @@ export default function HomePage() {
         {/* Events Section */}
         <section className="bg-[#FFFAF1] px-16 py-12">
           <div className="container mx-auto">
-          <div className="flex justify-between items-end mb-8">
-            <div>
-              <h1 className="text-4xl font-semibold mb-2">Upcoming Events</h1>
-              <p className="text-xl font-normal text-gray-500">
-                Mark your calendar for exciting happenings
-              </p>
+            <div className="flex justify-between items-end mb-8">
+              <div>
+                <h1 className="text-4xl font-semibold mb-2">Upcoming Events</h1>
+                <p className="text-xl font-normal text-gray-500">
+                  Mark your calendar for exciting happenings
+                </p>
+              </div>
+              {/* Search Bar */}
+              <Input
+                placeholder="Search Events"
+                prefix={<SearchOutlined />}
+                className="w-1/4"
+              />
             </div>
-            {/* Search Bar */}
-            <Input
-              placeholder="Search Events"
-              prefix={<SearchOutlined />}
-              className="w-1/4"
-            />
-          </div>
 
-          <Row gutter={[50, 16]} className="">
-            {Array.from({ length: 3 }, (_, i) => (
-              <Col span={8}>
-                <Card key={i} className="shadow-md">
-                  <div className="w-full flex justify-between items-center">
-                    <p className="flex items-center gap-1">
-                      <Clock className="w-[16px] h-[16px]" />
-                      3rd Mar-7th Mar
+            <Row gutter={[50, 16]} className="">
+              {Array.from({ length: 3 }, (_, i) => (
+                <Col key={i} span={8}>
+                  <Card className="shadow-md">
+                    <div className="w-full flex justify-between items-center">
+                      <p className="flex items-center gap-1">
+                        <Clock className="w-[16px] h-[16px]" />
+                        3rd Mar-7th Mar
+                      </p>
+                      <p className="flex items-center gap-1">
+                        <MapPin className="w-[16px] h-[16px]" />
+                        New Gate Ground, HST
+                      </p>
+                    </div>
+                    <p className="text-xl font-semibold my-3">
+                      Cultural Night Celebration
                     </p>
-                    <p className="flex items-center gap-1">
-                      <MapPin className="w-[16px] h-[16px]" />
-                      New Gate Ground, HST
+                    <p className="text-sm text-[#2c2c2c] font-light">
+                      Discover the richness of cultural heritage through
+                      performances that highlight the unique traditions and
+                      customs of our global community.
                     </p>
-                  </div>
-                  <p className="text-xl font-semibold my-3">
-                    Cultural Night Celebration
-                  </p>
-                  <p className="text-sm text-[#2c2c2c] font-light">
-                    Discover the richness of cultural heritage through
-                    performances that highlight the unique traditions and
-                    customs of our global community.
-                  </p>
-                  <p className="underline underline-offset-2 decoration-[#FFAE0E] text-[#FFAE0E] text-base font-medium mt-2">
-                    Know More
-                  </p>
-                </Card>
-              </Col>
-            ))}
-          </Row></div>
+                    <p className="underline underline-offset-2 decoration-[#FFAE0E] text-[#FFAE0E] text-base font-medium mt-2">
+                      Know More
+                    </p>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </div>
         </section>
 
         {/* News Section */}
@@ -726,10 +719,10 @@ export default function HomePage() {
             {/* Right Section: Smaller News */}
             <div className="flex flex-col gap-y-6">
               {newsData.slice(1).map((news) => (
-                <div className="flex gap-x-6">
+                <div key={news.id} className="flex gap-x-6">
                   <Image
                     preview={false}
-                    alt={newsData[0].title}
+                    alt={news.title}
                     src="/IITR_building.jpeg"
                     width="180px"
                     className="object-cover rounded-lg aspect-square"

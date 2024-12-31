@@ -8,7 +8,7 @@ interface DataItem {
   download_link: string;
 }
 
-const data: DataItem[] = Array.from({ length: 10 }, (_, index) => ({
+const data: DataItem[] = Array.from({ length: 10 }, () => ({
   title: "Request for course invoice generation for open participation course",
   date: "20/11/2024",
   download_link: "#",
@@ -20,8 +20,8 @@ export default function FormsPage() {
       title: "Sl. No.",
       dataIndex: "index",
       key: "index",
-      align: "center" as "center",
-      render: (_: any, __: DataItem, index: number) => <span>{index + 1}</span>,
+      align: "center",
+      render: (_: unknown, __: DataItem, index: number) => <span>{index + 1}</span>,
     },
     {
       title: "Description",
@@ -66,6 +66,7 @@ export default function FormsPage() {
         <div className="relative flex items-center z-20">
           <Image
             preview={false}
+            alt="IITR Logo"
             src="/IITR_logo.png"
             width="164px"
             height="164px"
