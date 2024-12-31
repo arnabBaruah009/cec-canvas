@@ -20,7 +20,7 @@ export default function FormsPage() {
       title: "Sl. No.",
       dataIndex: "index",
       key: "index",
-      align: "center",
+      align: "center" as const,
       render: (_: unknown, __: DataItem, index: number) => <span>{index + 1}</span>,
     },
     {
