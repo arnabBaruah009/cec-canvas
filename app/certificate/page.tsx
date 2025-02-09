@@ -1,9 +1,11 @@
 "use client";
 
 import { Form, Input, Button, Image, ConfigProvider } from "antd";
+import { useState } from "react";
 
 export default function CertificatePage() {
   const [form] = Form.useForm();
+  const [tab, setTab] = useState<"download" | "verify">("download");
 
   const onFinish = (values: unknown) => {
     console.log("Form Values:", values);
@@ -35,11 +37,34 @@ export default function CertificatePage() {
           </div>
         </div>
       </section>
-      <section className="bg-[#FFFAF1] py-6">
+      <section className="bg-[#FFFAF1] pb-6">
+        <div className="w-full grid grid-cols-2 mb-6">
+          <div
+            className={`flex-grow pt-6 pb-4 cursor-pointer ${
+              tab === "download"
+                ? "bg-[#FFE3AC] border-b-4 border-[#FFAE0E]"
+                : "border-b-black border-b"
+            }`}
+            onClick={() => setTab("download")}
+          >
+            <h2 className="text-2xl font-medium text-center tracking-wide">
+              Download Certificate
+            </h2>
+          </div>
+          <div
+            className={`flex-grow pt-6 pb-4 cursor-pointer ${
+              tab === "verify"
+                ? "bg-[#FFE3AC] border-b-4 border-[#FFAE0E]"
+                : "border-b-black border-b"
+            }`}
+            onClick={() => setTab("verify")}
+          >
+            <h2 className="text-2xl text-center tracking-wide">
+              Verify Certificate
+            </h2>
+          </div>
+        </div>
         <div className="p-6 max-w-md mx-auto container">
-          <h2 className="text-4xl font-medium mb-4 text-left tracking-wide">
-            Download Certificate
-          </h2>
           <Form
             form={form}
             layout="vertical"

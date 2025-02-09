@@ -46,65 +46,86 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link
-            href="/"
-            className={`hover:text-gray-300 ${
-              isActive("home") ? "text-[#ffa500]" : "text-white"
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            href="/sponsors"
-            className={`hover:text-gray-300 ${
-              isActive("sponsors") ? "text-[#ffa500]" : "text-white"
-            }`}
-          >
-            Sponsors
-          </Link>
-          <Link
-            href="/certificate"
-            className={`hover:text-gray-300 ${
-              isActive("certificate") ? "text-[#ffa500]" : "text-white"
-            }`}
-          >
-            Verify Certificate
-          </Link>
-          <Link
-            href="/forms"
-            className={`hover:text-gray-300 ${
-              isActive("forms") ? "text-[#ffa500]" : "text-white"
-            }`}
-          >
-            Forms
-          </Link>
-          <Link
-            href="/trainee-officer-hostel"
-            className={`hover:text-gray-300 ${
-              isActive("trainee-officer-hostel")
-                ? "text-[#ffa500]"
-                : "text-white"
-            }`}
-          >
-            TOH
-          </Link>
-          <Link
-            href="/staff"
-            className={`hover:text-gray-300 ${
-              isActive("staff") ? "text-[#ffa500]" : "text-white"
-            }`}
-          >
-            People
-          </Link>
-          <Link
-            href="/gallery"
-            className={`hover:text-gray-300 ${
-              isActive("gallery") ? "text-[#ffa500]" : "text-white"
-            }`}
-          >
-            Gallery
-          </Link>
+        <div className="hidden md:flex items-center space-x-6 relative">
+          {[
+            {
+              label: "Home",
+              href: "/",
+              submenu: ["About CEC", "CEC Brochure", "Amenities", "IITR Home"],
+            },
+            {
+              label: "Courses",
+              href: "",
+              submenu: [
+                "2023-24",
+                "2022-23",
+                "2021-22",
+                "2020-21",
+                "2019-20",
+                "2018-19",
+                "2017-18",
+              ],
+            },
+            {
+              label: "Sponsors",
+              href: "/sponsors",
+              submenu: ["International Sponsorers", "National Sponsorers"],
+            },
+            {
+              label: "QIP",
+              href: "",
+              submenu: [
+                "About",
+                "Selected Candidates (Sponsored)",
+                "Selected Candidates (Self-Financed)",
+                "NQCC Members",
+              ],
+            },
+            { label: "TOH", href: "/trainee-officer-hostel", submenu: [] },
+            { label: "People", href: "/staff", submenu: ["CEC Staff"] },
+            {
+              label: "Newsletter",
+              href: "",
+              submenu: ["Volume I", "Volume II", "Volume III"],
+            },
+            {
+              label: "Download",
+              href: "/forms",
+              submenu: [
+                "CEC new forms",
+                "CEC old forms",
+                "Sample Certificate",
+                "Calendar",
+              ],
+            },
+            { label: "Certificate", href: "/certificate", submenu: [] },
+            { label: "Gallery", href: "/gallery", submenu: [] },
+          ].map((item) => (
+            <div key={item.label} className="relative group">
+              <Link
+                href={item.href}
+                className={`hover:text-gray-300 ${
+                  isActive(item.label.toLowerCase())
+                    ? "text-[#ffa500]"
+                    : "text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+              {item.submenu.length > 0 && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible">
+                  {item.submenu.map((subItem) => (
+                    <p
+                      key={subItem}
+                      className="block px-4 py-2 hover:bg-gray-700 uppercase cursor-pointer text-sm"
+                    >
+                      {subItem}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </nav>
