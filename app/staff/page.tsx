@@ -60,7 +60,7 @@ const cardData: CardData[] = [
 export default function StaffPage() {
   return (
     <div className="w-full font-inter">
-      <section className="w-full h-screen flex items-center justify-center">
+      <section className="relative w-full h-[80vh] flex items-center justify-center">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-[url('/staff_background.jpeg')] bg-cover bg-center brightness-[0.7]"

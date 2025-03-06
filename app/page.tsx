@@ -365,7 +365,7 @@ export default function HomePage() {
 
   return (
     <div className="w-full font-inter">
-      <section className="w-full h-screen flex items-center justify-center border-2">
+      <section className="relative w-full h-[80vh] flex items-center justify-center">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-[url('/home_background.png')] bg-cover bg-center brightness-[0.7]"
@@ -385,7 +385,9 @@ export default function HomePage() {
           />
           <div className="border-l pl-2 text-white">
             <span className="text-2xl">IIT ROORKEE</span>
-            <p className="text-4xl">Continuing</p>
+            <p className="text-4xl">Quality</p>
+            <p className="text-4xl">Improvement</p>
+            <p className="text-4xl">&amp; Continuing</p>
             <p className="text-4xl">Education Center</p>
           </div>
         </div>
@@ -536,7 +538,7 @@ export default function HomePage() {
           </div>
 
           {/* Search and Categories */}
-          <div className="flex items-center justify-between mb-6 container mx-auto">
+          <div className="flex items-center justify-around px-16 mb-6 container mx-auto">
             <div
               className={`${
                 activeCategory === "Emerging Technologies"
@@ -644,37 +646,17 @@ export default function HomePage() {
             <h2 className="text-3xl font-semibold mb-4 text-center border-b-4 max-w-max mx-auto pb-2 border-b-[#FFC758] tracking-wide">
               Our Sponsors
             </h2>
-            <div className="flex justify-between flex-wrap py-6 container mx-auto">
-              <Image
-                src="/sponsor-1.png"
-                height="60px"
-                className="object-cover"
-                alt="Sponsor"
-              />
-              <Image
-                src="/sponsor-2.png"
-                height="60px"
-                className="object-cover"
-                alt="Sponsor"
-              />
-              <Image
-                src="/sponsor-3.png"
-                height="60px"
-                className="object-cover"
-                alt="Sponsor"
-              />
-              <Image
-                src="/sponsor-1.png"
-                height="60px"
-                className="object-cover"
-                alt="Sponsor"
-              />
-              <Image
-                src="/sponsor-2.png"
-                height="60px"
-                className="object-cover"
-                alt="Sponsor"
-              />
+            <div className="flex gap-10 justify-between flex-wrap py-6 container mx-auto">
+              {Array.from({ length: 44 }, (_, index) => (
+                <Image
+                  key={index}
+                  src={`/sponsors/sponsor-${index + 1}.png`}
+                  height="60px"
+                  className="object-cover"
+                  alt={`Sponsor ${index + 1}`}
+                  preview={false}
+                />
+              ))}
             </div>
           </div>
         </section>

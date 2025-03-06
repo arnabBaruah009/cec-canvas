@@ -34,14 +34,14 @@ export const Navbar: React.FC = () => {
           <Image
             preview={false}
             src="/IITR_logo.png"
-            width="38px"
-            height="38px"
+            width="60px"
+            height="60px"
             className=""
             alt="IITR Logo"
           />
-          <div className="text-white">
-            <p className="text-sm tracking-wider">Continuing</p>
-            <p className="text-sm tracking-wider">Education Center</p>
+          <div className="text-white space-y-1">
+            <p className="text-base tracking-wider leading-tight">Quality Improvement</p>
+            <p className="text-base tracking-wider leading-tight">&amp; Continuing Education Center</p>
           </div>
         </div>
 
