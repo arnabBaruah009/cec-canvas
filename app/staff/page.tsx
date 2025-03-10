@@ -8,7 +8,7 @@ interface CardData {
   name: string;
   designation: string;
   phone: string;
-  email: string;
+  email?: string;
 }
 
 // Sample data
@@ -25,42 +25,36 @@ const cardData: CardData[] = [
     name: "Mr. Sonal Kumar",
     designation: "Jr. Superintendent",
     phone: "01332-285247",
-    email: "Coordinator.cec.qip@iitr.ac.in",
   },
   {
     image_url: "/staff/prabhat-nautiyal.jpg",
     name: "Mr. Prabhat Nautiyal",
     designation: "Jr. Superintendent",
     phone: "01332-284327",
-    email: "Coordinator.cec.qip@iitr.ac.in",
   },
   {
     image_url: "/staff/sharad-sharma.jpg",
     name: "Mr. Sharad Sharma",
     designation: "Technical Associate",
     phone: "01332-285545",
-    email: "Coordinator.cec.qip@iitr.ac.in",
   },
   {
     image_url: "/staff/vipin-kumar.jpg",
     name: "Mr. Vipin Kumar",
     designation: "Ministerial Assistant",
     phone: "01332-284327",
-    email: "Coordinator.cec.qip@iitr.ac.in",
   },
   {
     image_url: "/staff/shakti-sahni.jpg",
     name: "Ms. Shakti Sahni",
     designation: "Computer Operator",
     phone: "01332-285545",
-    email: "Coordinator.cec.qip@iitr.ac.in",
   },
   {
     image_url: "/staff/anand-singh.jpg",
     name: "Mr. Anand Singh",
     designation: "Sybex Staff",
     phone: "01332-285545",
-    email: "Coordinator.cec.qip@iitr.ac.in",
   },
 ];
 
@@ -116,9 +110,11 @@ export default function StaffPage() {
                 <p className="text-base font-normal text-black">
                   Phone: {item.phone}
                 </p>
-                <p className="text-base font-normal text-black">
-                  Email: {item.email}
-                </p>
+                {item.email && (
+                  <p className="text-base font-normal text-black">
+                    Email: {item.email}
+                  </p>
+                )}
               </div>
             ))}
           </div>
