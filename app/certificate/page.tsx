@@ -71,39 +71,93 @@ export default function CertificatePage() {
             onFinish={onFinish}
             className="space-y-4"
           >
-            <Form.Item
-              label="Phone Number"
-              name="phone"
-              rules={[
-                { required: true, message: "Please enter your phone number!" },
-              ]}
-            >
-              <Input placeholder="Enter your phone number" />
-            </Form.Item>
+            {tab === "download" ? (
+              <>
+                <Form.Item
+                  label="Course Name"
+                  name="courseName"
+                  rules={[
+                    { required: true, message: "Please enter your course name!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your course name" />
+                </Form.Item>
 
-            <Form.Item
-              label="Email"
-              name="email"
-              rules={[
-                { required: true, message: "Please enter your email!" },
-                { type: "email", message: "Please enter a valid email!" },
-              ]}
-            >
-              <Input placeholder="Enter your email" />
-            </Form.Item>
+                <Form.Item
+                  label="Email"
+                  name="email"
+                  rules={[
+                    { required: true, message: "Please enter your email!" },
+                    { type: "email", message: "Please enter a valid email!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your email" />
+                </Form.Item>
 
-            <Form.Item
-              label="Enrollment Number"
-              name="enrollment"
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter your enrollment number!",
-                },
-              ]}
-            >
-              <Input placeholder="Enter your enrollment number" />
-            </Form.Item>
+                <Form.Item
+                  label="Candidate Name"
+                  name="candidateName"
+                  rules={[
+                    { required: true, message: "Please enter your candidate name!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your candidate name" />
+                </Form.Item>
+
+                <Form.Item
+                  label="Phone Number"
+                  name="phone"
+                  rules={[
+                    { required: true, message: "Please enter your phone number!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your phone number" />
+                </Form.Item>
+              </>
+            ) : (
+              <>
+                <Form.Item
+                  label="Candidate Name"
+                  name="candidateName"
+                  rules={[
+                    { required: true, message: "Please enter your candidate name!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your candidate name" />
+                </Form.Item>
+
+                <Form.Item
+                  label="Email"
+                  name="email"
+                  rules={[
+                    { required: true, message: "Please enter your email!" },
+                    { type: "email", message: "Please enter a valid email!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your email" />
+                </Form.Item>
+
+                <Form.Item
+                  label="Enrollment Number"
+                  name="enrollmentNumber"
+                  rules={[
+                    { required: true, message: "Please enter your enrollment number!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your enrollment number" />
+                </Form.Item>
+
+                <Form.Item
+                  label="Certificate ID"
+                  name="certificateId"
+                  rules={[
+                    { required: true, message: "Please enter your certificate ID!" },
+                  ]}
+                >
+                  <Input placeholder="Enter your certificate ID" />
+                </Form.Item>
+              </>
+            )}
 
             <Form.Item>
               <ConfigProvider
