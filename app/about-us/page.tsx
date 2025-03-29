@@ -1,21 +1,7 @@
 "use client";
 
-import { Image, Button, ConfigProvider, Input, Card, Row, Col } from "antd";
-import {
-  GraduationCap,
-  Users,
-  Handshake,
-  Clock,
-  Wifi,
-  Star,
-  Sun,
-  MapPin,
-  Pen,
-  CalendarMinus2,
-  LocateFixed,
-} from "lucide-react";
-import { SearchOutlined } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { Image, Row, Col } from "antd";
+import { Star, Sun, LocateFixed } from "lucide-react";
 
 export default function AboutUsPage() {
   return (
@@ -75,7 +61,7 @@ export default function AboutUsPage() {
               <p className="mb-4 text-gray-600 text-lg text-justify">
                 Centre organizes the courses in the beautiful campus of the
                 Institute and also outside the Institute in consultancy as well
-                as in sponsored mode that respond to client's continuing
+                as in sponsored mode that respond to client&apos;s continuing
                 professional development needs. The Centre is fully equipped
                 with the facility of conference hall, accommodation, dining and
                 recreation.
@@ -241,7 +227,7 @@ export default function AboutUsPage() {
               <p className="text-gray-700">
                 CEC is organizing courses at three campuses of IIT Roorkee i.e.
                 Roorkee, Saharanpur and GNEC campus. Also, courses are organised
-                at sponsorers' location/industry as well as via online mode
+                at sponsorers&apos; location/industry as well as via online mode
                 using various e-learning platforms.
               </p>
             </div>

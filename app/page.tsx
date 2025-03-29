@@ -444,7 +444,7 @@ export default function HomePage() {
                 attracting participants from across India and neighboring
                 countries. These innovative and accessible programs address the
                 current needs of professionals and are supported by IIT
-                Roorkee's technical expertise, with additional insights from
+                Roorkee&apos;s technical expertise, with additional insights from
                 industry and R&D experts.
               </p>
               <div className="mt-4 flex justify-between gap-8">
