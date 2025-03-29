@@ -176,7 +176,7 @@ export default function CertificatePage() {
                   htmlType="submit"
                   className="border-none w-full py-2.5 px-6 text-black text-lg font-normal tracking-wide"
                 >
-                  Download Brochure
+                  {tab === "download" ? "Download Certificate" : "Verify Certificate"}
                 </Button>
               </ConfigProvider>
             </Form.Item>

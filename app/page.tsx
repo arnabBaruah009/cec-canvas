@@ -444,7 +444,7 @@ export default function HomePage() {
                 attracting participants from across India and neighboring
                 countries. These innovative and accessible programs address the
                 current needs of professionals and are supported by IIT
-                Roorkee’s technical expertise, with additional insights from
+                Roorkee's technical expertise, with additional insights from
                 industry and R&D experts.
               </p>
               <div className="mt-4 flex justify-between gap-8">
@@ -538,7 +538,7 @@ export default function HomePage() {
           </div>
 
           {/* Search and Categories */}
-          <div className="flex items-center justify-around px-16 mb-6 container mx-auto">
+          <div className="flex items-center justify-start gap-x-6 mb-6 container mx-auto">
             <div
               className={`${
                 activeCategory === "Emerging Technologies"
@@ -646,17 +646,33 @@ export default function HomePage() {
             <h2 className="text-3xl font-semibold mb-4 text-center border-b-4 max-w-max mx-auto pb-2 border-b-[#FFC758] tracking-wide">
               Our Sponsors
             </h2>
-            <div className="flex gap-10 justify-between flex-wrap py-6 container mx-auto">
-              {Array.from({ length: 44 }, (_, index) => (
-                <Image
-                  key={index}
-                  src={`/sponsors/sponsor-${index + 1}.png`}
-                  height="60px"
-                  className="object-cover"
-                  alt={`Sponsor ${index + 1}`}
-                  preview={false}
-                />
-              ))}
+            <div className="w-full overflow-hidden">
+              <div className="flex gap-x-12 animate-scroll whitespace-nowrap py-6">
+                {/* First set of images */}
+                {Array.from({ length: 44 }, (_, index) => (
+                  <Image
+                    key={index}
+                    height="60px"
+                    src={`/sponsors/sponsor-${index + 1}.png`}
+                    className="object-contain mx-8"
+                    alt={`Sponsor ${index}`}
+                    preview={false}
+                    style={{ flexShrink: 0 }} // Prevent shrinking of images
+                  />
+                ))}
+                {/* Duplicate set for seamless scrolling */}
+                {Array.from({ length: 44 }, (_, index) => (
+                  <Image
+                    key={`duplicate-${index}`}
+                    height="60px"
+                    src={`/sponsors/sponsor-${index + 1}.png`}
+                    className="object-contain mx-8"
+                    alt={`Sponsor ${index}`}
+                    preview={false}
+                    style={{ flexShrink: 0 }} // Prevent shrinking of images
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

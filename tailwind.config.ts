@@ -23,6 +23,7 @@ export default {
       },
       animation: {
         scroll: "scroll 23s linear infinite",
+        sponsor: "sponsor 1s linear infinite",
       },
     },
   },
